@@ -19,9 +19,9 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BuildingBlocks", "BuildingBlocks", "{A16EC151-95D3-4320-B645-7D308BE2AAF7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "..\Domain\Domain.csproj", "{5C3530B7-3BBD-4891-85D2-EB41010075F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "BuildingBlocks\Domain\Domain.csproj", "{5C3530B7-3BBD-4891-85D2-EB41010075F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "..\Test\Test.csproj", "{801D21CA-04DB-404B-A43F-AD78D24B8A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "BuildingBlocks\Test\Test.csproj", "{801D21CA-04DB-404B-A43F-AD78D24B8A6B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HumanResources.Domain.Tests", "Services\HumanResources\HumanResources.Domain.Tests\HumanResources.Domain.Tests.csproj", "{D5AEB8F4-83EE-4E98-8183-C5BB7AE8AA57}"
 EndProject

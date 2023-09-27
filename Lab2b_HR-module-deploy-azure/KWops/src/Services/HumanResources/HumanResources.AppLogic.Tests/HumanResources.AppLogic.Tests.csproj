@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Test\Test.csproj" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Test\Test.csproj" />
     <ProjectReference Include="..\HumanResources.AppLogic\HumanResources.AppLogic.csproj" />
     <ProjectReference Include="..\HumanResources.Domain\HumanResources.Domain.csproj" />
   </ItemGroup>
