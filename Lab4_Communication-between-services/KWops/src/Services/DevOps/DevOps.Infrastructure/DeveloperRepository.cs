@@ -18,10 +18,10 @@ namespace DevOps.Infrastructure
             _context = context;
         }
 
-        public Task AddAsync(Developer developer)
+        public async Task AddAsync(Developer developer)
         {
             _context.Developers.Add(developer);
-            return Task.CompletedTask;
+            await CommitTrackedChangesAsync();           
         }
 
         public async Task CommitTrackedChangesAsync()
