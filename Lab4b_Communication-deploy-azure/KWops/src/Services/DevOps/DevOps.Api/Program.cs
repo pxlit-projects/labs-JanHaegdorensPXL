@@ -34,12 +34,11 @@ builder.Services.AddMassTransit(x =>
     //Alternative to registering all consumers one by one: register all consumers in the AppLogic assembly
     //x.AddConsumers(typeof(EmployeeHiredEventConsumer).Assembly);
 
-    IConfigurationSection eventBusSection = builder.Configuration.GetSection("event bus");
+    IConfigurationSection eventBusSection = builder.Configuration.GetSection("EventBus");
     var eventBusSettings = new EventBusSettings();
     eventBusSection.Bind(eventBusSettings);
     x.UseEventBus(eventBusSettings);
 });
-
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

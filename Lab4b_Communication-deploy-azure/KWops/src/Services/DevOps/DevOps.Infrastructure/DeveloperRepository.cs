@@ -21,7 +21,7 @@ namespace DevOps.Infrastructure
         public async Task AddAsync(Developer developer)
         {
             _context.Developers.Add(developer);
-            await CommitTrackedChangesAsync();
+            await CommitTrackedChangesAsync();           
         }
 
         public async Task CommitTrackedChangesAsync()

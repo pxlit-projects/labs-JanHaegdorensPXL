@@ -34,12 +34,11 @@ builder.Services.AddMassTransit(x =>
     //Alternative to registering all consumers one by one: register all consumers in the AppLogic assembly
     //x.AddConsumers(typeof(EmployeeHiredEventConsumer).Assembly);
 
-    IConfigurationSection rabbitMqSection = builder.Configuration.GetSection("event bus:RabbitMQ");
+    IConfigurationSection rabbitMqSection = builder.Configuration.GetSection("EventBus:RabbitMQ");
     var rabbitMqSettings = new RabbitMqSettings();
     rabbitMqSection.Bind(rabbitMqSettings);
     x.UseRabbitMq(rabbitMqSettings);
 });
-
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

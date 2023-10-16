@@ -1,5 +1,5 @@
 # choose a name containing your initials, like rg-fullstack-kh
-$global:RESOURCE_GROUP="jh-fullstack"
+$global:RESOURCE_GROUP="janh-fullstack"
 
 # choose a region nearby, this value is probably ok
 $global:LOCATION="westeurope"

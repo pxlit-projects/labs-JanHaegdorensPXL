@@ -29,16 +29,14 @@ builder.Services.AddControllers(options =>
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+
 builder.Services.AddMassTransit(x =>
 {
-    IConfigurationSection eventBusSection = builder.Configuration.GetSection("event bus");
+    IConfigurationSection eventBusSection = builder.Configuration.GetSection("EventBus");
     var eventBusSettings = new EventBusSettings();
     eventBusSection.Bind(eventBusSettings);
     x.UseEventBus(eventBusSettings);
 });
-
-
-
 
 ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddDbContext<HumanResourcesContext>(options =>
@@ -58,13 +56,7 @@ builder.Services.AddDbContext<HumanResourcesContext>(options =>
 #endif
 });
 
-
-
-
-
 var app = builder.Build();
-
-
 
 IServiceScope startUpScope = app.Services.CreateScope();
 var initializer = startUpScope.ServiceProvider.GetRequiredService<HumanResourcesDbInitializer>();

@@ -29,16 +29,14 @@ builder.Services.AddControllers(options =>
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+
 builder.Services.AddMassTransit(x =>
 {
-    IConfigurationSection rabbitMqSection = builder.Configuration.GetSection("event bus:RabbitMQ");
+    IConfigurationSection rabbitMqSection = builder.Configuration.GetSection("EventBus:RabbitMQ");
     var rabbitMqSettings = new RabbitMqSettings();
     rabbitMqSection.Bind(rabbitMqSettings);
     x.UseRabbitMq(rabbitMqSettings);
 });
-
-
-
 
 ConfigurationManager configuration = builder.Configuration;
 builder.Services.AddDbContext<HumanResourcesContext>(options =>
@@ -58,13 +56,7 @@ builder.Services.AddDbContext<HumanResourcesContext>(options =>
 #endif
 });
 
-
-
-
-
 var app = builder.Build();
-
-
 
 IServiceScope startUpScope = app.Services.CreateScope();
 var initializer = startUpScope.ServiceProvider.GetRequiredService<HumanResourcesDbInitializer>();

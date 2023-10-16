@@ -28,7 +28,6 @@ namespace HumanResources.AppLogic
 
         public async Task<IEmployee> HireNewAsync(string lastName, string firstName, DateTime startDate)
         {
-            //int starters = await _employeeRepository.GetNumberOfStartersOnAsync(startDate);
             int sequence = await _employeeRepository.GetNumberOfStartersOnAsync(startDate) + 1;
             IEmployee newEmployee = _employeeFactory.CreateNew(lastName, firstName, startDate, sequence);
             await _employeeRepository.AddAsync(newEmployee);
@@ -53,4 +52,3 @@ namespace HumanResources.AppLogic
         }
     }
 }
-
